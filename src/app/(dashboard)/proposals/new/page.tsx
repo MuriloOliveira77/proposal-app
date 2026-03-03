@@ -32,7 +32,7 @@ export default async function NewProposalPage() {
       </div>
 
       <ProposalForm
-        senderInfo={user || undefined}
+        senderInfo={user ? { ...user, name: user.name ?? "" } : undefined}
       />
     </div>
   );
