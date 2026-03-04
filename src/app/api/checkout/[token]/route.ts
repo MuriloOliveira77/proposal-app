@@ -59,7 +59,7 @@ export async function POST(_req: Request, { params }: RouteParams) {
       cancel_url: `${baseUrl}/p/${proposal.publicToken}`,
     });
   } catch (err: any) {
-    console.error("[STRIPE ERROR]", err?.message);
+    console.error("[STRIPE ERROR]", JSON.stringify({ message: err?.message, type: err?.type, code: err?.code, param: err?.param, statusCode: err?.statusCode }));
     return NextResponse.json({ error: err?.message || "Erro ao criar sessão de pagamento" }, { status: 500 });
   }
 
