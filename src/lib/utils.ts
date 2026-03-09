@@ -31,7 +31,10 @@ export function computeTotals(
 }
 
 export function buildPublicUrl(token: string): string {
-  const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  const baseUrl =
+    typeof window !== "undefined"
+      ? window.location.origin
+      : (process.env.NEXTAUTH_URL?.trim() || "https://proposal-app-silk-omega.vercel.app");
   return `${baseUrl}/p/${token}`;
 }
 
