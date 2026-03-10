@@ -41,15 +41,15 @@ export function ClassicTemplate({ proposal, isPublic = false }: TemplateProps) {
       <div className="bg-gray-950 px-5 md:px-10 pt-8 md:pt-12 pb-0">
         <div className="h-0.5 bg-amber-400 mb-6 w-12" />
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 pb-8 md:pb-10">
-          <div className="flex-1">
+          <div className="flex-1 min-w-0 md:pr-6">
             <p className="text-amber-400 text-xs uppercase tracking-[0.3em] font-semibold mb-3">Proposta Comercial</p>
             <h1 className="text-3xl md:text-5xl font-light text-white leading-tight tracking-tight">{proposal.title}</h1>
             <p className="text-gray-600 text-sm mt-3 tracking-widest">Nº {proposal.id.slice(-8).toUpperCase()}</p>
           </div>
-          <div className="md:text-right md:pl-6">
-            <p className="text-white font-semibold">{proposal.user.companyName || proposal.user.name}</p>
-            {proposal.user.companyName && <p className="text-gray-400 text-sm mt-1">{proposal.user.name}</p>}
-            <p className="text-gray-500 text-xs mt-1 break-words">{proposal.user.email}</p>
+          <div className="flex-shrink-0 md:max-w-[220px] md:text-right md:pl-6">
+            <p className="text-white font-semibold break-words">{proposal.user.companyName || proposal.user.name}</p>
+            {proposal.user.companyName && <p className="text-gray-400 text-sm mt-1 break-words">{proposal.user.name}</p>}
+            <p className="text-gray-500 text-xs mt-1 break-all">{proposal.user.email}</p>
             {proposal.user.phone && <p className="text-gray-500 text-xs">{proposal.user.phone}</p>}
           </div>
         </div>

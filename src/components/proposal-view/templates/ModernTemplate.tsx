@@ -44,15 +44,15 @@ export function ModernTemplate({ proposal, isPublic = false }: TemplateProps) {
         <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-20" style={{ background: "rgba(255,255,255,0.3)" }} />
         <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full opacity-10" style={{ background: "rgba(255,255,255,0.4)", transform: "translate(-50%, 50%)" }} />
         <div className="relative flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-          <div>
+          <div className="flex-1 min-w-0">
             <p className="text-violet-200 text-xs uppercase tracking-widest font-semibold mb-2">Proposta Comercial</p>
             <h1 className="text-3xl md:text-5xl font-black text-white leading-none mb-2">{proposal.title}</h1>
             <p className="text-violet-300 text-sm mt-2">#{proposal.id.slice(-8).toUpperCase()}</p>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 md:text-right">
-            <p className="text-white font-bold">{proposal.user.companyName || proposal.user.name}</p>
-            {proposal.user.companyName && <p className="text-violet-200 text-sm">{proposal.user.name}</p>}
-            <p className="text-violet-300 text-xs mt-1 break-words">{proposal.user.email}</p>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 md:text-right flex-shrink-0 md:max-w-[220px]">
+            <p className="text-white font-bold break-words">{proposal.user.companyName || proposal.user.name}</p>
+            {proposal.user.companyName && <p className="text-violet-200 text-sm break-words">{proposal.user.name}</p>}
+            <p className="text-violet-300 text-xs mt-1 break-all">{proposal.user.email}</p>
             {proposal.user.phone && <p className="text-violet-300 text-xs">{proposal.user.phone}</p>}
           </div>
         </div>

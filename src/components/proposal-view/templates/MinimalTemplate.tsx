@@ -42,7 +42,7 @@ export function MinimalTemplate({ proposal, isPublic = false }: TemplateProps) {
       <div className="px-5 md:px-12 py-8 md:py-14 space-y-8 md:space-y-14">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-          <div className="flex-1 md:pr-10">
+          <div className="flex-1 min-w-0 md:pr-6">
             <p className="text-teal-500 text-xs uppercase tracking-[0.3em] font-bold mb-3">Proposta Comercial</p>
             <h1 className="text-4xl md:text-6xl font-extralight text-gray-900 leading-none tracking-tight">{proposal.title}</h1>
             <div className="flex flex-wrap items-center gap-3 md:gap-6 mt-4">
@@ -56,10 +56,10 @@ export function MinimalTemplate({ proposal, isPublic = false }: TemplateProps) {
               )}
             </div>
           </div>
-          <div className="md:text-right md:border-l md:border-gray-100 md:pl-10">
-            <p className="font-semibold text-gray-900">{proposal.user.companyName || proposal.user.name}</p>
-            {proposal.user.companyName && <p className="text-gray-400 text-sm">{proposal.user.name}</p>}
-            <p className="text-gray-300 text-xs mt-1 break-words">{proposal.user.email}</p>
+          <div className="flex-shrink-0 md:max-w-[200px] md:text-right md:border-l md:border-gray-100 md:pl-6">
+            <p className="font-semibold text-gray-900 break-words">{proposal.user.companyName || proposal.user.name}</p>
+            {proposal.user.companyName && <p className="text-gray-400 text-sm break-words">{proposal.user.name}</p>}
+            <p className="text-gray-300 text-xs mt-1 break-all">{proposal.user.email}</p>
             {proposal.user.phone && <p className="text-gray-300 text-xs">{proposal.user.phone}</p>}
           </div>
         </div>
