@@ -39,18 +39,12 @@ export function CorporateTemplate({ proposal, isPublic = false }: TemplateProps)
 
       {/* Header */}
       <div style={{ backgroundColor: "#0f2744" }} className="px-5 md:px-10 py-8 md:py-12">
-        <div className="flex flex-col md:flex-row gap-6 items-start">
+        <div className="flex gap-6 items-start">
           <div className="w-1 self-stretch rounded-full flex-shrink-0" style={{ backgroundColor: "#f97316", minHeight: "60px" }} />
-          <div className="flex-1 min-w-0">
+          <div>
             <p className="text-orange-400 text-xs uppercase tracking-[0.3em] font-bold mb-2">Proposta Comercial</p>
             <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">{proposal.title}</h1>
             <p className="text-slate-500 text-sm mt-2 tracking-widest">REF: {proposal.id.slice(-8).toUpperCase()}</p>
-          </div>
-          <div className="flex-shrink-0 md:max-w-[220px] md:text-right">
-            <p className="text-white font-bold text-lg break-words">{proposal.user.companyName || proposal.user.name}</p>
-            {proposal.user.companyName && <p className="text-slate-400 text-sm break-words">{proposal.user.name}</p>}
-            <p className="text-slate-500 text-xs mt-1 break-all">{proposal.user.email}</p>
-            {proposal.user.phone && <p className="text-slate-500 text-xs">{proposal.user.phone}</p>}
           </div>
         </div>
 

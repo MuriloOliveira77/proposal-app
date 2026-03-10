@@ -58,11 +58,6 @@ export function VividTemplate({ proposal, isPublic = false }: TemplateProps) {
             )}
           </div>
         </div>
-        <div className="relative mt-4 md:mt-0 md:absolute md:bottom-8 md:right-10 md:text-right md:max-w-[220px]">
-          <p className="text-white font-bold text-lg break-words">{proposal.user.companyName || proposal.user.name}</p>
-          {proposal.user.companyName && <p className="text-pink-200 text-sm break-words">{proposal.user.name}</p>}
-          <p className="text-pink-300 text-xs break-all">{proposal.user.email}</p>
-        </div>
       </div>
 
       <div className="px-5 md:px-10 py-6 md:py-10 space-y-6 md:space-y-10">

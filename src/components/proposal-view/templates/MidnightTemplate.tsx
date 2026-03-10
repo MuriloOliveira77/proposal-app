@@ -40,22 +40,14 @@ export function MidnightTemplate({ proposal, isPublic = false }: TemplateProps) 
       {/* Header */}
       <div className="px-5 md:px-10 py-8 md:py-14" style={{ background: "linear-gradient(160deg, #111827 0%, #0d0d0d 100%)" }}>
         <div className="h-px mb-8 md:mb-10" style={{ background: "linear-gradient(90deg, transparent, #10b981, transparent)" }} />
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-          <div className="flex-1 min-w-0 md:pr-6">
-            {proposal.proposalType && (
-              <span className="inline-block text-emerald-400 text-xs font-bold uppercase tracking-[0.3em] mb-3">
-                {proposal.proposalType}
-              </span>
-            )}
-            <h1 className="text-3xl md:text-5xl font-black text-white leading-none tracking-tight">{proposal.title}</h1>
-            <p className="text-gray-600 text-sm mt-3 tracking-widest">#{proposal.id.slice(-8).toUpperCase()}</p>
-          </div>
-          <div className="flex-shrink-0 md:max-w-[220px] md:text-right md:border-l md:pl-6" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-            <p className="text-white font-bold text-lg break-words">{proposal.user.companyName || proposal.user.name}</p>
-            {proposal.user.companyName && <p className="text-gray-500 text-sm break-words">{proposal.user.name}</p>}
-            <p className="text-gray-600 text-xs mt-1 break-all">{proposal.user.email}</p>
-            {proposal.user.phone && <p className="text-gray-600 text-xs">{proposal.user.phone}</p>}
-          </div>
+        <div>
+          {proposal.proposalType && (
+            <span className="inline-block text-emerald-400 text-xs font-bold uppercase tracking-[0.3em] mb-3">
+              {proposal.proposalType}
+            </span>
+          )}
+          <h1 className="text-3xl md:text-5xl font-black text-white leading-none tracking-tight">{proposal.title}</h1>
+          <p className="text-gray-600 text-sm mt-3 tracking-widest">#{proposal.id.slice(-8).toUpperCase()}</p>
         </div>
 
         <div className="flex flex-wrap gap-4 md:gap-8 mt-8 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
